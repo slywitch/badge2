@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
+      {/* <Text>Home!</Text> */}
+      <Button title='Home' onPress={() => this.HomeIconWithBadge(5)}></Button>
     </View>
   );
 }
@@ -22,7 +24,7 @@ function SettingsScreen() {
 function IconWithBadge({ name, badgeCount, color, size }) {
   return (
     <View style={{ width: 24, height: 24, margin: 5 }}>
-      <Ionicons name={name} size={size} color={color} />
+      <Ionicons name='logo-ionic' size={24} color='red' />
       {badgeCount > 0 && (
         <View
           style={{
@@ -71,7 +73,7 @@ export default function App() {
             }
 
             // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Ionicons name='logo-ionic' size={24} color='black' />;
           },
         })}
         tabBarOptions={{
